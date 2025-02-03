@@ -20,6 +20,9 @@ SMODS.Joker {
     pos = { x = 6, y = 0 },
     cost = 8,
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS['e_foil']
+        info_queue[#info_queue + 1] = G.P_CENTERS['e_holo']
+        info_queue[#info_queue + 1] = G.P_CENTERS['e_polychrome']
         return {
             vars = {G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.add_odds}
         }
