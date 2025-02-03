@@ -13,8 +13,8 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
-    eternal_compat = false,
-    perishable_compat = true,
+    eternal_compat = true,
+    perishable_compat = false,
     config = { extra = { x_mult = 1, mult_gain = 0.1, inflation = 2 } },
     rarity = 3,
     atlas = "JJPack",
@@ -54,8 +54,7 @@ SMODS.Joker {
 
         if context.joker_main and card.ability.extra.x_mult ~= 1 then
             return {
-                message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.x_mult } },
-                Xmult_mod = card.ability.extra.x_mult
+                xmult = card.ability.extra.x_mult
             }
         end
     end
