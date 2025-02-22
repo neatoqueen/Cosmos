@@ -12,8 +12,9 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
-    eternal_compat = false,
-    perishable_compat = true,
+    eternal_compat = true,
+    perishable_compat = false,
+    enhancement_gate = 'm_stone',
     rarity = 1,
     atlas = "JJPack",
     pos = { x = 7, y = 0 },
@@ -27,16 +28,13 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         -- checks if scoring card is stone card
-    	if context.individual and context.cardarea == G.play then
-        	if context.other_card.ability.effect == 'Stone Card' then
+    	if context.individual and not context.blueprint and context.cardarea == G.play then
+        	if SMODS.has_enhancement(context.other_card, 'm_stone') then
             	card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
             	return {
-	                extra = {
 	                message = 'Coal...',
 	                colour = G.C.BLACK,
-	                focus = card,
-	            },
-	            card = card,
+                    focus = card
 	            }
 	        end
 	    end
@@ -44,9 +42,7 @@ SMODS.Joker {
         --adds mult after hand is played
 		if context.joker_main and card.ability.extra.mult > 0 then
 			return {
-				mult_mod = card.ability.extra.mult,
-				message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult } },
-				card = card
+				mult = card.ability.extra.mult
 			}
         end
     end
