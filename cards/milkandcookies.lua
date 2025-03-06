@@ -14,6 +14,7 @@ SMODS.Joker {
     discovered = true,
     eternal_compat = false,
     blueprint_compat = false,
+    pools = { Food = true },
     config = { extra = { tags = 0, tag_gen = 2 } },
     rarity = 2,
     atlas = 'JJPack',

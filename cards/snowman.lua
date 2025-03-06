@@ -37,9 +37,7 @@ SMODS.Joker {
         if context.joker_main then
             if card.ability.extra.chips > 0 then
                 return {
-                    message = localize { type = 'variable', key = 'a_chips', vars = { card.ability.extra.chips } },
-                    chip_mod = card.ability.extra.chips,
-                    colour = G.C.CHIPS
+                    chips = card.ability.extra.chips
                 }
             end
         end
