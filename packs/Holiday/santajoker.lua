@@ -1,23 +1,19 @@
 SMODS.Joker {
     key = "santajoker",
-    loc_txt = {
-        name = "Santa",
-        text = {
-            "{C:green}#1# in #2#{} chance to",
-            "create a {C:red}Coupon Tag",
-            "at {C:attention}end of round"
-        },
-    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
-    eternal_compat = false,
+    eternal_compat = true,
     perishable_compat = true,
     config = { extra = { odds = 3 } },
     rarity = 2,
-    atlas = "JJPack",
+    atlas = "HolidayAtlas",
     pos = { x = 0, y = 0 },
     cost = 6,
+    in_pool = function(self, args)
+        local check = G.cosmos.enabled.Holiday or false
+        return check
+    end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_TAGS.tag_coupon
         return{vars = {G.GAME.probabilities.normal or 1, card.ability.extra.odds}}

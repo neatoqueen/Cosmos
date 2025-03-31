@@ -1,14 +1,5 @@
 SMODS.Joker {
     key = "spinagogue",
-    loc_txt = {
-        name = "Spinagogue Champion",
-        text = {
-            "{C:green}#1# in #2#{} chance to add {C:dark_edition}Foil{},",
-            "{C:dark_edition}Holographic{}, or {C:dark_edition}Polychrome{}",
-            "to each card {C:attention}scored{} in",
-            "the {C:attention}first hand{} of round",
-        },
-    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
@@ -16,15 +7,23 @@ SMODS.Joker {
     perishable_compat = true,
     config = { extra = { add_odds = 4 } },
     rarity = 3,
-    atlas = "JJPack",
-    pos = { x = 6, y = 0 },
+    atlas = "HolidayAtlas",
+    pos = { x = 1, y = 1 },
     cost = 8,
+    in_pool = function(self, args)
+        local check = G.cosmos.enabled.Holiday or false
+        return check
+    end,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.add_odds}
         }
     end,
     calculate = function(self, card, context)
+        if context.first_hand_drawn then
+            local eval = function() return G.GAME.current_round.hands_played == 0 end
+            juice_card_until(card, eval, true)
+        end
         if context.before and context.cardarea == G.jokers and context.full_hand and G.GAME.current_round.hands_played == 0 then
             for i, v in ipairs(context.scoring_hand) do
                 if not v.edition then
