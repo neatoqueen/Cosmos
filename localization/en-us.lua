@@ -55,6 +55,7 @@ return {
                 },
             },
             j_cosmos_snowman_gain = {
+
                 name = 'Snowman',
                 text = {
                     "Gains {C:chips}+#2#{} Chips per card scored",
@@ -64,6 +65,7 @@ return {
                 }
             },
             j_cosmos_snowman_melt = {
+
                 name = 'Snowman',
                 text = {
 --                    "{C:inactive,s:0.7}The days are getting warmer...",

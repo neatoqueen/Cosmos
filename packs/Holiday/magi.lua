@@ -13,6 +13,7 @@ SMODS.Joker {
         local check = G.cosmos.enabled.Holiday or false
         return check
     end,
+
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_TAGS.tag_charm
     end,

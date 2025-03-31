@@ -16,6 +16,7 @@ SMODS.Joker {
         return check
     end,
     enhancement_gate = 'm_stone',
+
     loc_vars = function(self, info_queue, card)
           info_queue[#info_queue+1] = G.P_CENTERS.m_stone
           return {
