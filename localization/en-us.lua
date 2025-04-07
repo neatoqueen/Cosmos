@@ -142,7 +142,7 @@ return {
                 }
             },
             j_cosmos_jpop = {
-                name = "J-Pop",
+                name = "Photocard",
                 text = {
                     "Retrigger each scored {C:attention}#1#{},",
                     "rank changes at end of round"
