@@ -144,8 +144,9 @@ return {
             j_cosmos_jpop = {
                 name = "Photocard",
                 text = {
-                    "Retrigger each scored {C:attention}#1#{},",
-                    "rank changes at end of round"
+                    "Retrigger each scored",
+                    "{C:attention}#1#{}, rank changes",
+                    "at end of round"
                 }
             },
             j_cosmos_pianoroll = {
