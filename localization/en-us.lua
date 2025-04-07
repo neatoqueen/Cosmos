@@ -121,7 +121,7 @@ return {
                 text = {
                     "Gains {C:mult}+#1#{} Mult for every",
                     "hand played this round,",
-                    "resets at the end of the round",
+                    "resets at end of round",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
@@ -145,7 +145,7 @@ return {
                 name = "J-Pop",
                 text = {
                     "Retrigger each scored {C:attention}#1#{},",
-                    "rank changes every round"
+                    "rank changes at end of round"
                 }
             },
             j_cosmos_pianoroll = {
