@@ -110,7 +110,7 @@ return {
             j_cosmos_concertticket = {
                 name = "Concert Ticket",
                 text = {
-                    "After defeating the {C:attention}Boss Blind",
+                    "After defeating a {C:attention}Boss Blind",
                     "creates a {C:tarot}Voucher Tag",
                     "then {S:1.1,C:red,E:2}self destructs",
                 },
