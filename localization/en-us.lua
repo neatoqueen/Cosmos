@@ -110,10 +110,9 @@ return {
             j_cosmos_concertticket = {
                 name = "Concert Ticket",
                 text = {
-                    "Gains {C:money}$#1#{} of",
-                    "{C:attention}sell value{} at",
-                    "end of round",
-                    "{C:inactive}Destroyed when starting a {C:attention}Boss Blind",
+                    "After defeating the {C:attention}Boss Blind",
+                    "creates a {C:tarot}Voucher Tag",
+                    "then {S:1.1,C:red,E:2}self destructs",
                 },
             },
             j_cosmos_crescendo = {
@@ -198,7 +197,8 @@ return {
     },
     misc = {
         dictionary = {
-            k_cosmos_pack = "Cosmos Pack"
+            k_cosmos_pack = "Cosmos Pack",
+            k_showsover_ex = "Show's Over!"
         }
     }
 }
