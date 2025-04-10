@@ -33,8 +33,7 @@ SMODS.Joker {
     config = {
         extra = {
             x_mult = 1,
-            x_mult_mod = 0.5,
-            triggered = false
+            x_mult_mod = 0.5
         }
     },
 
@@ -64,24 +63,21 @@ SMODS.Joker {
         elseif context.remove_playing_cards and not context.blueprint then
             local targets = 0
             for k, val in ipairs(context.removed) do
-                if val:get_id() == G.GAME.current_round.cosmos_piano_card.rank then
+                if val:get_id() == G.GAME.current_round.cosmos_piano_card.id then
                     targets = targets + 1
                 end
             end
             if targets > 0 then
-                card.ability.extra.triggered = true
                 card.ability.extra.x_mult = card.ability.extra.x_mult + targets * card.ability.extra.x_mult_mod
+                cosmos_reset_piano_rank()
                 return {
                     message = localize {
                         type = 'variable',
                         key = 'a_xmult',
-                        vars = {card.ability.extra.x_mult + targets * card.ability.extra.x_mult_mod}
+                        vars = {card.ability.extra.x_mult}
                     }
                 }
             end
-        elseif context.after and card.ability.extra.triggered and not context.blueprint then
-            card.ability.extra.triggered = false
-            cosmos_reset_piano_rank()
         end
     end
 }
