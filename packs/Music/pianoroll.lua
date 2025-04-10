@@ -43,7 +43,7 @@ SMODS.Joker {
                 Xmult_mod = card.ability.extra.x_mult,
                 colour = G.C.MULT,
             }
-        elseif context.cards_destroyed then
+        elseif context.cards_destroyed and not context.blueprint then
             local targets = 0
             for k, v in ipairs(context.glass_shattered) do
                 if v:get_id() == G.GAME.current_round.cosmos_piano_card.rank then
@@ -65,7 +65,7 @@ SMODS.Joker {
                     end
                 }))
             end
-        elseif context.remove_playing_cards then
+        elseif context.remove_playing_cards and not context.blueprint then
             local targets = 0
             for k, val in ipairs(context.removed) do
                 if val:get_id() == G.GAME.current_round.cosmos_piano_card.rank then
@@ -74,12 +74,20 @@ SMODS.Joker {
             end
             if targets > 0 then
                 card.ability.extra.triggered = true
-                self.ability.extra.x_mult = self.ability.extra.x_mult + targets*self.ability.extra.x_mult_mod
                 G.E_MANAGER:add_event(Event({
-                func = function() card_eval_status_text(self, 'extra', nil, nil, nil, {message = localize{type = 'variable', key = 'a_xmult', vars = {self.ability.extra.x_mult}}}); return true
-                end}))
+                    func = function()
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                self.ability.extra.x_mult = self.ability.extra.x_mult + targets*self.ability.extra.x_mult_mod
+                                return true
+                            end
+                        }))
+                        card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize{type = 'variable', key = 'a_xmult', vars = {self.ability.extra.x_mult + targets*self.ability.extra}}})
+                        return true
+                    end
+                }))
             end
-        elseif context.after and card.ability.extra.triggered then
+        elseif context.after and card.ability.extra.triggered and not context.blueprint then
             card.ability.extra.triggered = false
             cosmos_reset_piano_rank()
         end
