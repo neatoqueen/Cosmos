@@ -158,6 +158,26 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
             },
+            j_cosmos_seashanty_discard = {
+                name = "Sea Shanty",
+                text = {
+                    "Gain {C:money}$#1#{} of {C:attention}sell value",
+                    "after discarding",
+                    "Lose {C:money}$#2#{} of {C:attention}sell value",
+                    "after playing a hand",
+                    "{C:inactive}Swap after playing or discarding"
+                }
+            },
+            j_cosmos_seashanty_play = {
+                name = "Sea Shanty",
+                text = {
+                    "Gain {C:money}$#1#{} of {C:attention}sell value",
+                    "after playing a hand",
+                    "Lose {C:money}$#2#{} of {C:attention}sell value",
+                    "after discarding",
+                    "{C:inactive}Swap after playing or discarding"
+                }
+            },
             j_cosmos_sgtjoker = {
                 name = "Sgt. Joker",
                 text = {
