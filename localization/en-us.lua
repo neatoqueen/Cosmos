@@ -126,9 +126,9 @@ return {
             j_cosmos_crescendo = {
                 name = "Crescendo",
                 text = {
-                    "Gains {C:mult}+#1#{} Mult for every",
-                    "hand played this round,",
-                    "resets at end of round",
+                    "Gains {C:mult}+#1#{} Mult per",
+                    "hand played, resets when",
+                    "{C:attention}Boss Blind{} is defeated",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },

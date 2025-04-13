@@ -20,5 +20,25 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                message = localize{type='variable', key='a_mult', vars={card.ability.extra.mult}},
+                mult_mod = card.ability.extra.mult
+            }
+        end
+        if context.before then
+            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+            return {
+                message = localize{type='variable',key='a_mult',vars={card.ability.extra.mult_mod}},
+                colour = G.C.RED
+            }
+        end
+        if context.end_of_round and G.GAME.blind.boss and context.cardarea == G.jokers then
+            card.ability.extra.mult = 0
+            return {
+                message = localize('k_reset'),
+                colour = G.C.RED
+            }
+        end
     end
 }
