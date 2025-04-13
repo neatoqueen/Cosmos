@@ -98,6 +98,14 @@ return {
                 }
             },
             -- Music Pack
+            j_cosmos_amajor = {
+                name = "A Major",
+                text = {
+                    "Every played {C:attention}Ace{}, {C:attention}3{} and {C:attention}5{}",
+                    "permanently gains",
+                    "{C:mult}+#1#{} Mult when scored",
+                }
+            },
             j_cosmos_bellpepper = {
                 name = "Bell Pepper",
                 text = {
@@ -146,6 +154,18 @@ return {
                     "Retrigger each scored",
                     "{C:attention}#1#{}, rank changes",
                     "at end of round"
+                }
+            },
+            j_cosmos_marchingband = {
+                name = "Marching Band",
+                text = {
+                    "Lia to write something"
+                }
+            },
+            j_cosmos_musicteacher = {
+                name = "Music Teacher",
+                text = {
+                    "Lia to write something"
                 }
             },
             j_cosmos_pianoroll = {
