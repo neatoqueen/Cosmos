@@ -209,11 +209,11 @@ return {
             j_cosmos_sgtjoker = {
                 name = "Sgt. Joker",
                 text = {
-                    "Gains {C:mult}+#1#{} Mult when scored",
-                    "hand contains exactly #2# {C:hearts}Heart{}",
-                    "Resets if played hand contains",
-                    "#3# or more {C:hearts}Hearts{}",
-                    "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"
+                    "Gains {C:mult}+#1#{} Mult when poker",
+                    "hand contains a Lone {C:hearts}Heart{}",
+                    "Resets if poker hand contains",
+                    "#2# or more {C:hearts}Hearts{}",
+                    "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
                 }
             },
             j_cosmos_ukulele = {
@@ -248,7 +248,8 @@ return {
     misc = {
         dictionary = {
             k_cosmos_pack = "Cosmos Pack",
-            k_showsover_ex = "Show's Over!"
+            k_showsover_ex = "Show's Over!",
+            k_staylonely_ex = "Stay Lonely"
         }
     }
 }
