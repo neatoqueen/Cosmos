@@ -219,10 +219,9 @@ return {
             j_cosmos_ukulele = {
                 name = "Ukulele",
                 text = {
-                    "{C:green}#1# in #2#{} chance to score",
-                    "adjacent cards when a card is scored",
-                    "{C:inactive}(Each card can only be scored",
-                    "{C:inactive}one extra time this way)"
+                    "{C:chips}+#1#{} Chips per scored card",
+                    "if played hand contains",
+                    "exactly {C:attention}#2#{} cards"
                 }
             }
         },
