@@ -177,6 +177,15 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
             },
+            j_cosmos_musicscale = {
+                name = "Scake Joker",
+                text = {
+                    "Gains {C:mult}+#1#{} Mult if poker hand",
+                    "contains a {C:attention}#2#{}, then increases",
+                    "required rank by 1 (Next: {C:attention}#3#{})",
+                    "{C:inactive}Currently {C:mult}+#4#{} Mult"
+                }
+            },
             j_cosmos_seashanty_discard = {
                 name = "Sea Shanty",
                 text = {
