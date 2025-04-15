@@ -18,7 +18,7 @@ SMODS.Joker {
     atlas = "MusicAtlas",
     pos = { x = 0, y = 0 },
     cost = 5,
-    config = { extra = { chips = 1, chip_mod = 1 } },
+    config = { extra = { chips = 50, chip_mod = 1 } },
     in_pool = function(self, args)
         local check = G.cosmos.enabled.Music or false
         return check
