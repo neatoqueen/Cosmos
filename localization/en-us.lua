@@ -109,8 +109,8 @@ return {
             j_cosmos_bellpepper = {
                 name = "Bell Pepper",
                 text = {
-                    "Each played card with {V:1}#1#{} suit",
-                    "gives {C:chips}+#2#{} Chips when scored",
+                    "Gives {C:chips}+#2#{} Chips for each",
+                    "played card with {V:1}#1#{} suit",
                     "{C:chips}-#3#{} Chips per {V:1}#1#{} scored",
                     "{s:0.8}suit changes at end of round"
                 }
