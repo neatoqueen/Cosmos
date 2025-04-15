@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "musicteacher",
+    key = "conductor",
     unlocked = true,
     discovered = true,
     blueprint_compat = true,

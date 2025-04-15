@@ -123,6 +123,14 @@ return {
                     "then {S:1.1,C:red,E:2}self destructs",
                 },
             },
+            j_cosmos_conductor = {
+                name = "Conductor",
+                text = {
+                    "{C:attention}+#1#{} hand size if your",
+                    "most played poker hand",
+                    "is a Straight or Straight Flush"
+                }
+            },
             j_cosmos_crescendo = {
                 name = "Crescendo",
                 text = {
@@ -158,12 +166,6 @@ return {
             },
             j_cosmos_marchingband = {
                 name = "Marching Band",
-                text = {
-                    "Lia to write something"
-                }
-            },
-            j_cosmos_musicteacher = {
-                name = "Music Teacher",
                 text = {
                     "Lia to write something"
                 }
