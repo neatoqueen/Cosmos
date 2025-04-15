@@ -26,7 +26,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = { localize(G.GAME.current_round.cosmos_pepper_card.suit or 'Spades', 'suits_singular'),
-                card.ability.extra.chips,
+                math.max(card.ability.extra.chips,0),
                 card.ability.extra.chip_mod,
                 colours = {G.C.SUITS[G.GAME.current_round.cosmos_pepper_card.suit or 'Spades']} }
         }
@@ -35,40 +35,6 @@ SMODS.Joker {
         if context.individual and context.cardarea == G.play and not context.blueprint and context.other_card and
         context.other_card:is_suit(G.GAME.current_round.cosmos_pepper_card.suit) then
             card.ability.extra.chips = card.ability.extra.chips - card.ability.extra.chip_mod
-            if card.ability.extra.chips == 0 then
-                G.E_MANAGER:add_event(Event({
-
-                }))
-                return {
-                    chips = card.ability.extra.chips + 1,
-                    card = card,
-                    extra = {
-                        message = localize('k_eaten_ex'),
-                        trigger = 'after',
-                        message_card = card,
-                        func = function()
-                            play_sound('tarot1')
-                            card.T.r = -0.2
-                            card:juice_up(0.3, 0.4)
-                            card.states.drag.is = true
-                            card.children.center.pinch.x = true
-                            card.getting_sliced = true
-                            G.E_MANAGER:add_event(Event({
-                                trigger = 'after',
-                                delay = 0.3,
-                                blockable = false,
-                                func = function()
-                                    G.jokers:remove_card(card)
-                                    card:remove()
-                                    card = nil
-                                    return true;
-                                end
-                            }))
-                            return true
-                        end
-                    }
-                }
-            end
             if card.ability.extra.chips < 0 then
                 return
             end
@@ -76,6 +42,29 @@ SMODS.Joker {
                 chips = card.ability.extra.chips + 1,
                 card = card
             }
+        elseif context.after then
+            if card.ability.extra.chips <= 0 then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        play_sound('tarot1')
+                        card.T.r = -0.2
+                        card:juice_up(0.3, 0.4)
+                        card.states.drag.is = true
+                        card.children.center.pinch.x = true
+                        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
+                            func = function()
+                                    G.jokers:remove_card(card)
+                                    card:remove()
+                                    card = nil
+                                return true; end}))
+                        return true
+                    end
+                }))
+                return {
+                    message = localize('k_eaten_ex'),
+                    colour = G.C.RED
+                }
+            end
         end
     end
 }
