@@ -42,7 +42,7 @@ SMODS.Joker {
                 local highest_name = cosmos_get_most_played_hand_types()
                 for k, v in ipairs(highest_name) do
                     if v == "Straight" or v == "Straight Flush" then
-                        active = 2
+                        active = card.ability.extra.hand_size_mod
                     end
                 end
                 local diff = active-card.ability.h_size
