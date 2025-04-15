@@ -128,7 +128,8 @@ return {
                 text = {
                     "{C:attention}+#1#{} hand size if your",
                     "most played poker hand",
-                    "is a Straight or Straight Flush"
+                    "is a {C:attention}Straight{} or {C:attention}Straight Flush{}",
+                    "{C:inactive}(Currently {C:attention}+#2#{C:inactive} hand size)"
                 }
             },
             j_cosmos_crescendo = {
@@ -250,7 +251,8 @@ return {
         dictionary = {
             k_cosmos_pack = "Cosmos Pack",
             k_showsover_ex = "Show's Over!",
-            k_staylonely_ex = "Stay Lonely"
+            k_staylonely_ex = "Stay Lonely",
+            k_inactive_ex = "Inactive"
         }
     }
 }
