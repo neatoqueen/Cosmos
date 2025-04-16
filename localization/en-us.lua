@@ -123,6 +123,15 @@ return {
                     "then {S:1.1,C:red,E:2}self destructs",
                 },
             },
+            j_cosmos_conductor = {
+                name = "Conductor",
+                text = {
+                    "{C:attention}+#1#{} hand size if your",
+                    "most played poker hand",
+                    "is a {C:attention}Straight{} or {C:attention}Straight Flush{}",
+                    "{C:inactive}(Currently {C:attention}+#2#{C:inactive} hand size)"
+                }
+            },
             j_cosmos_crescendo = {
                 name = "Crescendo",
                 text = {
@@ -158,12 +167,6 @@ return {
             },
             j_cosmos_marchingband = {
                 name = "Marching Band",
-                text = {
-                    "Lia to write something"
-                }
-            },
-            j_cosmos_musicteacher = {
-                name = "Music Teacher",
                 text = {
                     "Lia to write something"
                 }
@@ -248,7 +251,8 @@ return {
         dictionary = {
             k_cosmos_pack = "Cosmos Pack",
             k_showsover_ex = "Show's Over!",
-            k_staylonely_ex = "Stay Lonely"
+            k_staylonely_ex = "Stay Lonely",
+            k_inactive_ex = "Inactive"
         }
     }
 }
