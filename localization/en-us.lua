@@ -166,9 +166,11 @@ return {
                 }
             },
             j_cosmos_marchingband = {
-                name = "Marching Band",
+                name = "Drum Major",
                 text = {
-                    "Lia to write something"
+                    "Gives {X:mult,C:white}X#1#{} Mult for each",
+                    "remaining {C:attention}numbered card{} in {C:attention}deck",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
                 }
             },
             j_cosmos_pianoroll = {
