@@ -179,11 +179,10 @@ return {
             j_cosmos_rimshot = {
                 name = "Rimshot",
                 text = {
-                    "If {C:attention}first poker hand of round",
-                    "was a {C:attention}Pair{},",
+                    "If {C:attention}first poker hand",
+                    "{C:attention}of round{} was a {C:attention}Pair{},",
                     "destroy a random card",
-                    "held in hand",
-                    "at end of round"
+                    "held in hand at end of round"
                 }
             }
         },

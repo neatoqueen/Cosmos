@@ -40,7 +40,7 @@ SMODS.Joker {
     atlas = "MusicAtlas",
     pos = {
         x = 0,
-        y = 0
+        y = 2
     },
     cost = 5,
     config = {
