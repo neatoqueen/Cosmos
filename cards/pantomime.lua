@@ -1,17 +1,21 @@
 SMODS.Joker {
     key = 'pantomime',
+    loc_txt = {
+        name = 'Pantomime',
+        text = {
+            "Retrigger {C:attention}played cards{} and",
+            "cards {C:attention}held in hand{} that",
+            "share the same rank"
+        }
+    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
     config = { extra = { retrigger = 1, prev_ranks = {} } },
     rarity = 3,
-    atlas = 'HolidayAtlas',
+    atlas = 'JJPack',
     pos = { x = 3, y = 0 },
     cost = 8,
-    in_pool = function(self, args)
-        local check = G.cosmos.enabled.Holiday or false
-        return check
-    end,
     calculate = function(self, card, context)
         if context.other_card and context.repetition then
             local playranks = {}

@@ -1,20 +1,25 @@
 SMODS.Joker {
     key = 'wrappingpaper',
+    loc_txt = {
+        name = 'Wrapping Paper',
+        text = {
+            "At the {C:attention}end of round{},",
+            "add this Joker's {C:attention}sell value",
+            "to the one to the right",
+            "{C:inactive}(Max of {C:money}$#2#{C:inactive})"
+            --"{C:inactive}(Currently at {C:money}$#1#{C:inactive} value)"
+        }
+    },
     unlocked = true,
     discovered = true,
     blueprint_compat = false,
     config = { extra = { maximum = 20 } },
     rarity = 2,
-    atlas = 'HolidayAtlas',
+    atlas = 'JJPack',
     pos = { x = 4, y = 0 },
-    config = {extra = {max = 20}},
     cost = 7,
-    in_pool = function(self, args)
-        local check = G.cosmos.enabled.Holiday or false
-        return check
-    end,
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.max } }
+        return { vars = { card.sell_cost, card.ability.extra.maximum } }
     end,
     calculate = function(self, card, context)
         if context.end_of_round and not context.individual and not context.repetition and not context.blueprint then

@@ -1,19 +1,25 @@
 SMODS.Joker {
     key = "krampusjoker",
+    loc_txt = {
+        name = "Krampus",
+        text = {
+            "When {C:attention}purchasing{} from the Shop,",
+            "this Joker gains {X:mult,C:white}X#2#{} Mult",
+            "{s:0.33} ",
+            "{C:red,E:2}Items cost {C:money}$#1#{C:red,E:2} more",
+            "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
+        },
+    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = false,
+    eternal_compat = false,
+    perishable_compat = true,
     config = { extra = { x_mult = 1, mult_gain = 0.1, inflation = 2 } },
     rarity = 3,
-    atlas = "HolidayAtlas",
+    atlas = "JJPack",
     pos = { x = 1, y = 0 },
     cost = 8,
-    in_pool = function(self, args)
-        local check = G.cosmos.enabled.Holiday or false
-        return check
-    end,
     loc_vars = function(self, info_queue, card)
         return {
             vars = { card.ability.extra.inflation, card.ability.extra.mult_gain, card.ability.extra.x_mult }

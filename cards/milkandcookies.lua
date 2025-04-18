@@ -1,19 +1,24 @@
 SMODS.Joker {
     key = 'milkandcookies',
+    loc_txt = {
+        name = 'Milk & Cookies',
+        text = {
+            "Sell this card to",
+            "create {C:attention}#1# {C:green}Tags{}",
+            "{s:0.33} ",
+            "When {C:attention}Boss Blind{} is defeated,",
+            "increase by {C:attention}+#2#{} {C:green}Tags",
+        }
+    },
     unlocked = true,
     discovered = true,
     eternal_compat = false,
     blueprint_compat = false,
-    perishable_compat = false,
     config = { extra = { tags = 0, tag_gen = 2 } },
     rarity = 2,
-    atlas = 'HolidayAtlas',
+    atlas = 'JJPack',
     pos = { x = 2, y = 0 },
     cost = 6,
-    in_pool = function(self, args)
-        local check = G.cosmos.enabled.Holiday or false
-        return check
-    end,
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.tags, card.ability.extra.tag_gen } }
     end,

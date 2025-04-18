@@ -1,21 +1,24 @@
 --STANN.co
 SMODS.Joker {
     key = "coalstocking",
+    loc_txt = {
+        name = "Coal Stocking",
+        text = {
+            "This Joker gains {C:mult}+#2#{} Mult",
+            "when scoring a {C:attention}Stone{} Card",
+            "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
+        },
+    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
     rarity = 1,
-    atlas = "HolidayAtlas",
-    pos = { x = 2, y = 1 },
+    atlas = "JJPack",
+    pos = { x = 7, y = 0 },
     cost = 6,
-    config = { extra = { mult = 0, mult_gain = 1 } },
-    in_pool = function(self, args)
-        local check = G.cosmos.enabled.Holiday or false
-        return check
-    end,
-    enhancement_gate = 'm_stone',
+    config = { extra = { mult = 0, mult_gain = 2 } },
     loc_vars = function(self, info_queue, card)
           info_queue[#info_queue+1] = G.P_CENTERS.m_stone
           return {

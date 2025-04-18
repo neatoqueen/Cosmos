@@ -1,18 +1,22 @@
 SMODS.Joker {
     key = "magi",
+    loc_txt = {
+        name = "Magi",
+        text = {
+            "Creates a {C:tarot}Charm Tag{} if",
+            "winning poker hand",
+            "is {C:attention}Three of a Kind"
+        },
+    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     rarity = 2,
-    atlas = "HolidayAtlas",
-    pos = { x = 3, y = 1 },
+    atlas = "JJPack",
+    pos = { x = 8, y = 0 },
     cost = 7,
-    in_pool = function(self, args)
-        local check = G.cosmos.enabled.Holiday or false
-        return check
-    end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_TAGS.tag_charm
     end,

@@ -1,5 +1,13 @@
 SMODS.Joker {
     key = "snowstorm",
+    loc_txt = {
+        name = "Snowstorm",
+        text = {
+            "Each {C:attention}Enhanced{} card",
+            "{C:attention}held in hand",
+            "gives {C:chips}+#1#{} Chips"
+        },
+    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
@@ -7,13 +15,9 @@ SMODS.Joker {
     perishable_compat = true,
     config = { extra = { chips = 25 } },
     rarity = 2,
-    atlas = "HolidayAtlas",
-    pos = { x = 0, y = 1 },
+    atlas = "JJPack",
+    pos = { x = 5, y = 0 },
     cost = 5,
-    in_pool = function(self, args)
-        local check = G.cosmos.enabled.Holiday or false
-        return check
-    end,
     loc_vars = function(self, info_queue, card)
         return {
             vars = { card.ability.extra.chips }
