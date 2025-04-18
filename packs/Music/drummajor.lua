@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "marchingband",
+    key = "drummajor",
     unlocked = true,
     discovered = true,
     blueprint_compat = true,

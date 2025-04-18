@@ -16,7 +16,7 @@ function cosmos_reset_jpop_rank()
 end
 
 SMODS.Joker {
-    key = "jpop",
+    key = "photocard",
     unlocked = true,
     discovered = true,
     blueprint_compat = true,

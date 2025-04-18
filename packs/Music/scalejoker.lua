@@ -3,7 +3,7 @@ cosmos_scalejoker_ranks_debug = {
 }
 
 SMODS.Joker {
-    key = "musicscale",
+    key = "scalejoker",
     unlocked = true,
     discovered = true,
     blueprint_compat = true,

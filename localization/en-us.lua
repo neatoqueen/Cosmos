@@ -141,6 +141,14 @@ return {
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
+            j_cosmos_drummajor = {
+                name = "Drum Major",
+                text = {
+                    "Gives {X:mult,C:white}X#1#{} Mult for each",
+                    "remaining {C:attention}numbered card{} in {C:attention}deck",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
+                }
+            },
             j_cosmos_hahapedal = {
                 name = "Ha-ha Pedal",
                 text = {
@@ -157,20 +165,12 @@ return {
                     "{C:attention}Steel Cards{} held in hand give {X:mult,C:white}X#2#{} Mult",
                 }
             },
-            j_cosmos_jpop = {
+            j_cosmos_photocard = {
                 name = "Photocard",
                 text = {
                     "Retrigger each scored",
                     "{C:attention}#1#{}, rank changes",
                     "at end of round"
-                }
-            },
-            j_cosmos_marchingband = {
-                name = "Drum Major",
-                text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult for each",
-                    "remaining {C:attention}numbered card{} in {C:attention}deck",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
                 }
             },
             j_cosmos_pianoroll = {
@@ -182,7 +182,16 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
             },
-            j_cosmos_musicscale = {
+            j_cosmos_rimshot = {
+                name = "Rimshot",
+                text = {
+                    "If {C:attention}first poker hand",
+                    "{C:attention}of round{} was a {C:attention}Pair{},",
+                    "destroy a random card",
+                    "held in hand at end of round"
+                }
+            },
+            j_cosmos_scalejoker = {
                 name = "Scale Joker",
                 text = {
                     "Gains {C:mult}+#1#{} Mult if poker hand",
@@ -229,15 +238,6 @@ return {
                     "exactly {C:attention}#2#{} cards"
                 }
             },
-            j_cosmos_rimshot = {
-                name = "Rimshot",
-                text = {
-                    "If {C:attention}first poker hand",
-                    "{C:attention}of round{} was a {C:attention}Pair{},",
-                    "destroy a random card",
-                    "held in hand at end of round"
-                }
-            }
         },
         Other = {
             p_cosmos_Holiday_booster = {
