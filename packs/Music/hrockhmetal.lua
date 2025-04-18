@@ -1,5 +1,3 @@
-local chips_bonus, x_mult_bonus = 25, 1.75
-
 SMODS.Joker {
     key = "hrockhmetal",
     unlocked = true,
@@ -16,10 +14,8 @@ SMODS.Joker {
     cost = 5,
     config = {
         extra = {
-            chips = chips_bonus,
-            x_mult = x_mult_bonus / 1.5,
-            ui_chips = 50 + chips_bonus,
-            ui_x_mult = x_mult_bonus
+            chips = 25,
+            x_mult = 1.25,
         }
     },
 
@@ -33,14 +29,14 @@ SMODS.Joker {
                 break
             end
         end
-        return check or enhancement_gate
+        return check and enhancement_gate
     end,
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS.m_stone
         info_queue[#info_queue + 1] = G.P_CENTERS.m_steel
         return {
-            vars = {card.ability.extra.ui_chips, card.ability.extra.ui_x_mult}
+            vars = {card.ability.extra.chips, card.ability.extra.x_mult}
         }
     end,
 
