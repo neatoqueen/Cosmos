@@ -181,7 +181,7 @@ return {
                 }
             },
             j_cosmos_musicscale = {
-                name = "Scake Joker",
+                name = "Scale Joker",
                 text = {
                     "Gains {C:mult}+#1#{} Mult if poker hand",
                     "contains a {C:attention}#2#{}, then increases",
