@@ -153,8 +153,8 @@ return {
             j_cosmos_hrockhmetal = {
                 name = "Hard Rock & Heavy Metal",
                 text = {
-                    "{C:attention}Stone Cards{} now give {C:chips}+#1#{} Chips",
-                    "{C:attention}Steel Cards{} now give {X:mult,C:white}X#2#{} Mult",
+                    "Scored {C:attention}Stone Cards{} give {C:chips}+#1#{} Chips",
+                    "{C:attention}Steel Cards{} held in hand give {X:mult,C:white}X#2#{} Mult",
                 }
             },
             j_cosmos_jpop = {
