@@ -11,7 +11,7 @@ SMODS.Joker {
         x = 4,
         y = 0
     },
-    cost = 5,
+    cost = 4,
     config = {
         extra = {
             chips = 25,

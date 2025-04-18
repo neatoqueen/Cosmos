@@ -20,10 +20,10 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    rarity = 1,
+    rarity = 2,
     atlas = "MusicAtlas",
     pos = { x = 4, y = 2 },
-    cost = 5,
+    cost = 6,
     config = { extra = { hand_size_mod = 2, initialized = false } },
     in_pool = function(self, args)
         local check = G.cosmos.enabled.Music or false
