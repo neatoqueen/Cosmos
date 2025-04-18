@@ -228,15 +228,6 @@ return {
                     "if played hand contains",
                     "exactly {C:attention}#2#{} cards"
                 }
-            },
-            j_cosmos_rimshot = {
-                name = "Rimshot",
-                text = {
-                    "If {C:attention}first poker hand",
-                    "{C:attention}of round{} was a {C:attention}Pair{},",
-                    "destroy a random card",
-                    "held in hand at end of round"
-                }
             }
         },
         Other = {
@@ -263,8 +254,7 @@ return {
             k_cosmos_pack = "Cosmos Pack",
             k_showsover_ex = "Show's Over!",
             k_staylonely_ex = "Stay Lonely",
-            k_inactive_ex = "Inactive",
-            k_cosmos_inactive = "inactive"
+            k_inactive_ex = "Inactive"
         }
     }
 }
