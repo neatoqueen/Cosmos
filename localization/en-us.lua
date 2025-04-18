@@ -98,11 +98,19 @@ return {
                 }
             },
             -- Music Pack
+            j_cosmos_amajor = {
+                name = "A Major",
+                text = {
+                    "Every played {C:attention}Ace{}, {C:attention}3{} and {C:attention}5{}",
+                    "permanently gains",
+                    "{C:mult}+#1#{} Mult when scored",
+                }
+            },
             j_cosmos_bellpepper = {
                 name = "Bell Pepper",
                 text = {
-                    "Each played card with {V:1}#1#{} suit",
-                    "gives {C:chips}+#2#{} Chips when scored",
+                    "Gives {C:chips}+#2#{} Chips for each",
+                    "played card with {V:1}#1#{} suit",
                     "{C:chips}-#3#{} Chips per {V:1}#1#{} scored",
                     "{s:0.8}suit changes at end of round"
                 }
@@ -110,18 +118,26 @@ return {
             j_cosmos_concertticket = {
                 name = "Concert Ticket",
                 text = {
-                    "Gains {C:money}$#1#{} of",
-                    "{C:attention}sell value{} at",
-                    "end of round",
-                    "{C:inactive}Destroyed when starting a {C:attention}Boss Blind",
+                    "After defeating a {C:attention}Boss Blind",
+                    "creates a {C:tarot}Voucher Tag",
+                    "then {S:1.1,C:red,E:2}self destructs",
                 },
+            },
+            j_cosmos_conductor = {
+                name = "Conductor",
+                text = {
+                    "{C:attention}+#1#{} hand size if your",
+                    "most played poker hand",
+                    "is a {C:attention}Straight{} or {C:attention}Straight Flush{}",
+                    "{C:inactive}(Currently {C:attention}+#2#{C:inactive} hand size)"
+                }
             },
             j_cosmos_crescendo = {
                 name = "Crescendo",
                 text = {
-                    "Gains {C:mult}+#1#{} Mult for every",
-                    "hand played this round,",
-                    "resets at the end of the round",
+                    "Gains {C:mult}+#1#{} Mult per",
+                    "hand played, resets when",
+                    "{C:attention}Boss Blind{} is defeated",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
@@ -137,15 +153,22 @@ return {
             j_cosmos_hrockhmetal = {
                 name = "Hard Rock & Heavy Metal",
                 text = {
-                    "{C:attention}Stone Cards{} now give {C:chips}+#1#{} Chips",
-                    "{C:attention}Steel Cards{} now give {X:mult,C:white}X#2#{} Mult",
+                    "Scored {C:attention}Stone Cards{} give {C:chips}+#1#{} Chips",
+                    "{C:attention}Steel Cards{} held in hand give {X:mult,C:white}X#2#{} Mult",
                 }
             },
             j_cosmos_jpop = {
-                name = "J-Pop",
+                name = "Photocard",
                 text = {
-                    "Retrigger each scored {C:attention}#1#{},",
-                    "rank changes every round"
+                    "Retrigger each scored",
+                    "{C:attention}#1#{}, rank changes",
+                    "at end of round"
+                }
+            },
+            j_cosmos_marchingband = {
+                name = "Marching Band",
+                text = {
+                    "Lia to write something"
                 }
             },
             j_cosmos_pianoroll = {
@@ -157,23 +180,51 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
             },
+            j_cosmos_musicscale = {
+                name = "Scale Joker",
+                text = {
+                    "Gains {C:mult}+#1#{} Mult if poker hand",
+                    "contains a {C:attention}#2#{}, then increases",
+                    "required rank by 1 (Next: {C:attention}#3#{})",
+                    "{C:inactive}Currently {C:mult}+#4#{} Mult"
+                }
+            },
+            j_cosmos_seashanty_discard = {
+                name = "Sea Shanty",
+                text = {
+                    "Gain {C:money}$#1#{} of {C:attention}sell value",
+                    "after discarding",
+                    "Lose {C:money}$#2#{} of {C:attention}sell value",
+                    "after playing a hand",
+                    "{C:inactive}Swap after playing or discarding"
+                }
+            },
+            j_cosmos_seashanty_play = {
+                name = "Sea Shanty",
+                text = {
+                    "Gain {C:money}$#1#{} of {C:attention}sell value",
+                    "after playing a hand",
+                    "Lose {C:money}$#2#{} of {C:attention}sell value",
+                    "after discarding",
+                    "{C:inactive}Swap after playing or discarding"
+                }
+            },
             j_cosmos_sgtjoker = {
                 name = "Sgt. Joker",
                 text = {
-                    "Gains {C:mult}+#1#{} Mult when scored",
-                    "hand contains exactly #2# {C:hearts}Heart{}",
-                    "Resets if played hand contains",
-                    "#3# or more {C:hearts}Hearts{}",
-                    "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"
+                    "Gains {C:mult}+#1#{} Mult when poker",
+                    "hand contains a Lone {C:hearts}Heart{}",
+                    "Resets if poker hand contains",
+                    "#2# or more {C:hearts}Hearts{}",
+                    "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
                 }
             },
             j_cosmos_ukulele = {
                 name = "Ukulele",
                 text = {
-                    "{C:green}#1# in #2#{} chance to score",
-                    "adjacent cards when a card is scored",
-                    "{C:inactive}(Each card can only be scored",
-                    "{C:inactive}one extra time this way)"
+                    "{C:chips}+#1#{} Chips per scored card",
+                    "if played hand contains",
+                    "exactly {C:attention}#2#{} cards"
                 }
             },
             j_cosmos_rimshot = {
@@ -207,8 +258,11 @@ return {
     },
     misc = {
         dictionary = {
-            k_cosmos_inactive = "inactive",
             k_cosmos_pack = "Cosmos Pack",
+            k_showsover_ex = "Show's Over!",
+            k_staylonely_ex = "Stay Lonely",
+            k_inactive_ex = "Inactive",
+            k_cosmos_inactive = "inactive"
         }
     }
 }

@@ -1,0 +1,31 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "reset_mail_rank()"
+position = "after"
+payload = '''
+cosmos_reset_jpop_rank()'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "reset_mail_rank()"
+position = "after"
+payload = '''
+cosmos_reset_jpop_rank()'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "mail_card = {rank = 'Ace'},"
+position = "after"
+payload = '''
+cosmos_jpop_card = {rank = 'Ace', id = 14},'''
+match_indent = true
