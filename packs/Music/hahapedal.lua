@@ -23,12 +23,15 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.selling_card then
+        if context.selling_card and context.card ~= card and context.card.ability.set == 'Joker' then
             local valid_cards = {}
             for i, v in ipairs(G.playing_cards) do
                 if not v.edition then
                     valid_cards[#valid_cards+1] = v
                 end
+            end
+            if #valid_cards == 0 then
+                return
             end
             local target = pseudorandom_element(valid_cards, pseudoseed('haha'..G.GAME.round_resets.ante))
 
@@ -77,17 +80,17 @@ SMODS.Joker {
                 end
                 }))
             if edition == 'e_polychrome' then
-                card_eval_status_text(card_, 'extra', nil, nil, nil, {
+                card_eval_status_text(target, 'extra', nil, nil, nil, {
                     message = localize("k_upgrade_ex"),
                     colour = colour or G.C.GREEN
                 })
             elseif edition == 'e_holo' then
-                card_eval_status_text(card_, 'extra', nil, nil, nil, {
+                card_eval_status_text(target, 'extra', nil, nil, nil, {
                     message = localize("k_upgrade_ex"),
                     colour = colour or G.C.RED
                 })
             else
-                card_eval_status_text(card_, 'extra', nil, nil, nil, {
+                card_eval_status_text(target, 'extra', nil, nil, nil, {
                     message = localize("k_upgrade_ex"),
                     colour = colour or G.C.BLUE
                 })
