@@ -3,7 +3,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
     eternal_compat = false,
-    blueprint_compat = false,
+    blueprint_compat = true,
     perishable_compat = false,
     config = { extra = { tags = 0, tag_gen = 2 } },
     rarity = 2,
@@ -15,13 +15,16 @@ SMODS.Joker {
         return check
     end,
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.tags, card.ability.extra.tag_gen } }
+        return {
+            vars = {card.ability.extra.tags, card.ability.extra.tag_gen}
+        }
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and not context.individual and not context.repetition and G.GAME.blind.boss then
+        if context.end_of_round and not context.individual and not context.repetition and not context.blueprint and
+            G.GAME.blind.boss then
             card.ability.extra.tags = card.ability.extra.tags + card.ability.extra.tag_gen
             return {
-                message = "+"..card.ability.extra.tag_gen.." Tags!",
+                message = "+" .. card.ability.extra.tag_gen .. " Tags!",
                 colour = G.C.GREEN
             }
         end
@@ -37,8 +40,27 @@ SMODS.Joker {
             end
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    for _, tag in pairs(give_tags) do
-                        add_tag(Tag(tag, false, 'Big'))
+                    for _, tag_key in pairs(give_tags) do
+                        local tag = Tag(tag_key)
+
+                        -- Thanks to Paperback for the Orbital Tag fix
+                        -- The way the hand for an orbital tag in the base game is selected could cause issues
+                        -- with mods that modify blinds, so we randomly pick one from all visible hands
+                        if tag_key == "tag_orbital" then
+                            local available_hands = {}
+
+                            for k, hand in pairs(G.GAME.hands) do
+                                if hand.visible then
+                                    available_hands[#available_hands + 1] = k
+                                end
+                            end
+
+                            tag.ability.orbital_hand = pseudorandom_element(available_hands,
+                            pseudoseed('jj_milkandcookies_orbital'))
+                        end
+                        --
+
+                        add_tag(tag)
                     end
                     play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)

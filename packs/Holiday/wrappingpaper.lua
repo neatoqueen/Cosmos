@@ -26,7 +26,7 @@ SMODS.Joker {
             end
             if G.jokers.cards[my_pos + 1] then
                 local modcard = G.jokers.cards[my_pos + 1]
-                modcard.ability.extra_value = (modcard.ability.extra_value or 0) + math.min(card.sell_cost. card.ability.extra.maximum)
+                modcard.ability.extra_value = (modcard.ability.extra_value or 0) + math.min(card.sell_cost, card.ability.extra.maximum)
                 modcard:set_cost()
                 card_eval_status_text(modcard, 'extra', nil, nil, nil, {
                     message = localize('k_val_up'),
