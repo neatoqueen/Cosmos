@@ -12,7 +12,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
-    eternal_compat = true,
+    eternal_compat = false,
     perishable_compat = true,
     rarity = 1,
     atlas = "MusicAtlas",
@@ -32,7 +32,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and not context.blueprint and context.other_card and
+        if context.individual and context.cardarea == G.play and context.other_card and
         context.other_card:is_suit(G.GAME.current_round.cosmos_pepper_card.suit) then
             card.ability.extra.chips = card.ability.extra.chips - card.ability.extra.chip_mod
             if card.ability.extra.chips < 0 then
@@ -42,7 +42,7 @@ SMODS.Joker {
                 chips = card.ability.extra.chips + 1,
                 card = card
             }
-        elseif context.after then
+        elseif context.after and not context.blueprint then
             if card.ability.extra.chips <= 0 then
                 G.E_MANAGER:add_event(Event({
                     func = function()
