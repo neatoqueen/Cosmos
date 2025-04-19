@@ -56,7 +56,7 @@ SMODS.Joker {
                         }
                     else
                         return {
-                            message = localize("k_inactive_ex"),
+                            message = localize("k_cosmos_inactive_ex"),
                             colour = G.C.RED
                         }
                     end

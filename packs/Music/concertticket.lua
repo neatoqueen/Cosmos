@@ -52,7 +52,7 @@ SMODS.Joker {
                 end
             }))
             return {
-                message = localize('k_showsover_ex'),
+                message = localize('k_cosmos_showsover_ex'),
                 colour = G.C.PURPLE
             }
         end

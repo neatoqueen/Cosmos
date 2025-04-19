@@ -41,7 +41,7 @@ SMODS.Joker {
             elseif targets > 1 then
                 card.ability.extra.mult = 0
                 return {
-                    message = localize('k_staylonely_ex'),
+                    message = localize('k_cosmos_staylonely_ex'),
                     colour = G.C.RED
                 }
             end

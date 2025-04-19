@@ -261,9 +261,9 @@ return {
     misc = {
         dictionary = {
             k_cosmos_pack = "Cosmos Pack",
-            k_showsover_ex = "Show's Over!",
-            k_staylonely_ex = "Stay Lonely",
-            k_inactive_ex = "Inactive",
+            k_cosmos_showsover_ex = "Show's Over!",
+            k_cosmos_staylonely_ex = "Stay Lonely",
+            k_cosmos_inactive_ex = "Inactive",
             k_cosmos_inactive = "inactive"
         }
     }
