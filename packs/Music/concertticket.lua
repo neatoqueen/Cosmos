@@ -21,7 +21,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and not context.individual and not context.repetition then
+        if context.end_of_round and not context.individual and not context.repetition and G.GAME.last_blind.boss then
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_voucher'))
