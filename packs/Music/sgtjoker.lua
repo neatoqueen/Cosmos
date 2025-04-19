@@ -36,11 +36,7 @@ SMODS.Joker {
             if targets == 1 then
                 card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
                 return {
-                    message = localize {
-                        type = 'variable',
-                        key = 'a_mult',
-                        vars = {card.ability.extra.mult_mod}
-                    }
+                    message = localize('k_upgrade_ex')
                 }
             elseif targets > 1 then
                 card.ability.extra.mult = 0
