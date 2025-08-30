@@ -36,7 +36,7 @@ SMODS.Joker {
                             colour = G.C.RED
                         end
                     end
-                    if pseudorandom('jj_spinagogue_add') < G.GAME.probabilities.normal / card.ability.extra.add_odds then
+                    if SMODS.pseudorandom_probability(card, pseudoseed('jj_spinagogue_add'), 1, card.ability.extra.add_odds) then
                         local edition = poll_edition('jj_spinagogue_edition', nil, true, true, { "e_foil", "e_holo", "e_polychrome" })
                         -- G.E_MANAGER:add_event(Event({
                         --     trigger = 'immediate',
