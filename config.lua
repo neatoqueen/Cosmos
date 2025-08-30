@@ -5,7 +5,7 @@ return {
             ['reskin'] = true,
         },
         ['Music'] = {
-            ['enabled'] = false
+            ['enabled'] = true
         }
     },
     ['booster weight'] = 0
