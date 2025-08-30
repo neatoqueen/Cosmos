@@ -28,6 +28,12 @@ SMODS.Joker {
                         colour = G.C.RED,
                         card = context.other_card,
                     }
+                elseif card.debuff then
+                    return {
+                        message = localize('k_debuffed'),
+                        colour = G.C.RED,
+                        card = card,
+                    }
                 else
                     return {
                             h_chips = card.ability.extra.chips,
