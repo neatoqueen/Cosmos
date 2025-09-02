@@ -37,21 +37,22 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.other_card and context.repetition then
-            if context.other_card:get_id() == G.GAME.current_round.cosmos_jpop_card.id then
-                if context.other_card.debuff then
-                    return {
-                        message = localize('k_debuffed'),
-                        colour = G.C.RED,
-                        card = card,
-                    }
-                else
-                    return {
-                        message = localize('k_again_ex'),
-                        repetitions = card.ability.extra.retrigger,
-                        card = card
-                    }
-                end
+        if context.cardarea == G.play
+        and context.other_card
+        and context.repetition
+        and context.other_card:get_id() == G.GAME.current_round.cosmos_jpop_card.id then
+            if context.other_card.debuff then
+                return {
+                    message = localize('k_debuffed'),
+                    colour = G.C.RED,
+                    card = card,
+                }
+            else
+                return {
+                    message = localize('k_again_ex'),
+                    repetitions = card.ability.extra.retrigger,
+                    card = card
+                }
             end
         end
     end
