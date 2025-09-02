@@ -72,11 +72,11 @@ Bugs? Feedback? Report here: [Google Form](https://docs.google.com/forms/d/e/1FA
 **Victin**
 
 ## RECOMMENDED MODS
-- [ExtraCredit by Balatro University Community](https://github.com/GuilloryCraft/ExtraCredit/tree/main) *vanilla-style*
-- [Bunco by Firch](https://github.com/Firch/Bunco) *vanilla-style*
-- [kcvanilla by krackocloud](https://github.com/kcgidw/kcvanilla) *vanilla-style*
-- [Neato Jokers by Neato](https://github.com/neatoqueen/NeatoJokers) *vanilla-style*
-- [Virtues by someone23832](https://github.com/someone23832/Virtues) *vanilla-ish*
-- [Paperback by PaperMoon](https://github.com/GitNether/paperback) *vanilla-ish*
-- [Card Sleeves by Larswijn](https://github.com/larswijn/CardSleeves) *new tech*
-- [Celestial Funk (Texture Pack) by Lime_Effy](https://github.com/LimeEffy/Celestial-Funk) *planet texture pack*
+- [ExtraCredit by Balatro University Community](https://github.com/GuilloryCraft/ExtraCredit/tree/main)
+- [Bunco by Firch](https://github.com/Firch/Bunco) 
+- [kcvanilla by krackocloud](https://github.com/kcgidw/kcvanilla) 
+- [Neato Jokers by Neato](https://github.com/neatoqueen/NeatoJokers) 
+- [Virtues by someone23832](https://github.com/someone23832/Virtues)
+- [Paperback by PaperMoon](https://github.com/GitNether/paperback) 
+- [Card Sleeves by Larswijn](https://github.com/larswijn/CardSleeves) 
+- [Celestial Funk (Texture Pack) by Lime_Effy](https://github.com/LimeEffy/Celestial-Funk) 
