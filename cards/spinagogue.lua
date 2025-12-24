@@ -14,14 +14,15 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { add_odds = 4 } },
+    config = { extra = { odds = 4 } },
     rarity = 3,
     atlas = "JJPack",
     pos = { x = 6, y = 0 },
     cost = 8,
     loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'spinagogue')
         return {
-            vars = {G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.add_odds}
+            vars = {numerator, denominator}
         }
     end,
     calculate = function(self, card, context)
@@ -37,7 +38,8 @@ SMODS.Joker {
                             colour = G.C.RED
                         end
                     end
-                    if pseudorandom('jj_spinagogue_add') < G.GAME.probabilities.normal / card.ability.extra.add_odds then
+                    local success = SMODS.pseudorandom_probability(card, 'spinagogue', 1, card.ability.extra.odds, 'spinagogue')
+                    if success then
                         local edition = poll_edition('jj_spinagogue_edition', nil, true, true, { "e_foil", "e_holo", "e_polychrome" })
                         -- G.E_MANAGER:add_event(Event({
                         --     trigger = 'immediate',

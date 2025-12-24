@@ -19,11 +19,19 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     cost = 6,
     loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'santa')
         info_queue[#info_queue + 1] = G.P_TAGS.tag_coupon
-        return{vars = {G.GAME.probabilities.normal or 1, card.ability.extra.odds}}
+        return {
+            vars = {numerator, denominator}
+        }
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and not context.individual and not context.repetition and (pseudorandom('santa')<= G.GAME.probabilities.normal/card.ability.extra.odds ) then
+        if context.end_of_round and not context.individual and not context.repetition then
+            local success = SMODS.pseudorandom_probability(card, 'santa', 1, card.ability.extra.odds, 'santa')
+            if not success then
+                return
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_coupon'))
